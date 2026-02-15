@@ -1,6 +1,5 @@
 const navItem = document.querySelectorAll('.nav-item')
 const navLink = document.querySelectorAll('.nav-link')
-const dropdownMenu = document.querySelectorAll('.dropdown-menu')
 const overlay = document.querySelector('.overlay')
 const closeBtn = document.querySelector('.close-menu')
 const burgerMenu  = document.querySelector('.burger-menu')
@@ -14,7 +13,7 @@ navLink.forEach(item => {
     const parent = item.closest('.nav-item')
 
     navItem.forEach(el => {
-      if (el != parent) {
+      if (el !== parent) {
         el.classList.remove('active')
       }
     })
