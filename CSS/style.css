@@ -2,6 +2,7 @@
   --gray-50: hsl(0, 0%, 98%);
   --gray-500: hsl(0, 0%, 41%);
   --gray-950: hsl(0, 0%, 8%);
+  --color-overlay: rgba(0, 0, 0, 0.5);
   --font-size-body: 1.125rem;
   --font-family: 'Epilogue', sans-serif;
   --fw-medium: 500;
@@ -10,7 +11,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  html * {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
@@ -37,7 +38,7 @@ body {
 .header-container {
   display: flex;
   justify-content: space-between;
-  padding: 1.25rem;
+  padding: clamp(1rem, 3vw, 1.25rem);
   align-items: center;
 }
 
@@ -89,10 +90,10 @@ body {
 }
 
 .main-container {
-  padding-inline: 9.375rem;
+  padding-inline: clamp(1rem, 10vw, 9.375rem);
   display: flex;
   align-items: center;
-  gap: 6.25rem;
+  gap: clamp(2rem, 5vw, 6.25rem);
   margin-inline: auto;
 }
 
@@ -101,7 +102,7 @@ body {
 }
 
 .main-title {
-  font-size: 3.375rem;
+  font-size: clamp(2.2rem, 8vw, 3.375rem);
   color: var(--gray-950);
   line-height: 1.1;
   margin-block-end: 1.5rem;
@@ -199,17 +200,6 @@ body {
   display: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 62.5em) {
   .burger-menu {
     display: block; 
@@ -265,7 +255,7 @@ body {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background-color: var(--color-overlay);
     z-index: 50;
   }
 
